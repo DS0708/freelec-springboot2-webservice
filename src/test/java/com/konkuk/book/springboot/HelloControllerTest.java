@@ -21,7 +21,7 @@ public class HelloControllerTest {
 
     @Test
     public void return_hello() throws Exception {
-        String hello = "hello";
+        String hello = "hello23";
 
         mvc.perform(get("/hello"))  //MockMvc를 통해 /hello 주소로 HTTP GET 요청을 합니다
                 .andExpect(status().isOk())    //200 이면 성공
