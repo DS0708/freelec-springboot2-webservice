@@ -4,3 +4,13 @@
 ### IntelliJ ###
 .gradle
 .idea
+
+# Compiled class file
+*.class
+
+# Log files
+*.log
+
+# Build output
+out/
+target/
