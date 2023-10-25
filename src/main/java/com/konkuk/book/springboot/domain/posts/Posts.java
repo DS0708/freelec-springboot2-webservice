@@ -1,5 +1,6 @@
 package com.konkuk.book.springboot.domain.posts;
 
+import com.konkuk.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @Getter                 //클래스 내 모든 필드의 Getter 메소드를 자동생성, 참고로 Entity클래스 에서는 절대 Setter 메소드를 만들지 않는다.
 @NoArgsConstructor      //기본 생성자 자동 추가,  public Posts() {}와 같은 효과
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id     //PK
     @GeneratedValue(strategy = GenerationType.IDENTITY)     //PK의 생성 규칙을 나타냄, IDENTITY는 auto_increment이다.
     private Long id;
