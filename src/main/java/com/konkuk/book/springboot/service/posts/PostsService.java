@@ -29,6 +29,7 @@ public class PostsService {
 
         //update 부분에서 따로 쿼리를 날리지 않는 이유 = dirty checking (https://jojoldu.tistory.com/415)
         //JPA에서는 트랜잭션이 끝나는 시점에 변화가 있는 모든 엔티티 객체를 데이터베이스에 자동으로 반영해줍니다.
+        //findById를 통해 찾을 때 해당 엔티티의 스냅샷을 만들어 놓는다.
 
         return id;
     }
