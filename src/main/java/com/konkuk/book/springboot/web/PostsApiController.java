@@ -8,7 +8,7 @@ import com.konkuk.book.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor    //final로 선언된 필드에 대한 생성자를 자동으로 생성
 @RestController
 public class PostsApiController {
 
