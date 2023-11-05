@@ -100,4 +100,32 @@ public class PostsApiControllerTest {
 
     }
 
+    @Test
+    public void Posts_delete_test() throws Exception {
+        // Given
+        // 테스트를 위한 Posts 생성
+        Posts savedPosts = postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+
+        Long postId = savedPosts.getId();
+        String url = "http://localhost:" + port + "/api/v1/posts/" + postId;
+
+        // When
+        // DELETE 메서드를 사용하여 해당 게시물 삭제
+        ResponseEntity<Long> responseEntity = restTemplate.exchange(url, HttpMethod.DELETE, null, Long.class);
+
+        // Then
+        // HTTP 응답이 OK 여야 하고, 삭제된 게시물의 ID는 0보다 커야 함
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(responseEntity.getBody()).isGreaterThan(0L);
+
+        // 게시물이 실제로 삭제되었는지 확인
+        Posts deletedPosts = postsRepository.findById(postId).orElse(null);
+        assertThat(deletedPosts).isNull();
+    }
+
+
 }
