@@ -17,3 +17,6 @@ build/
 # Build output
 out/
 target/
+
+# 보안
+application-oauth.properties
