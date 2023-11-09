@@ -16,6 +16,7 @@ var main = {
 
     },
     save : function (){
+         //alert('저장 버튼 클릭');
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
