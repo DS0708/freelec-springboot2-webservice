@@ -20,3 +20,4 @@ target/
 
 # 보안
 application-oauth.properties
+freelec-springboot2-webservice-user_credentials.csv
