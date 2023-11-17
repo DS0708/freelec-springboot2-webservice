@@ -20,4 +20,5 @@ target/
 
 # 보안
 application-oauth.properties
+application-real-db.properties
 freelec-springboot2-webservice-user_credentials.csv
