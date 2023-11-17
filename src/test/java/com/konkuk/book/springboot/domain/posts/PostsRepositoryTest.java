@@ -1,26 +1,26 @@
 package com.konkuk.book.springboot.domain.posts;
 
 
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest //별다른 설정없이 @SpringBootTest를 사용할 경우 H2데이터베이스를 자동으로 실행해준다.
 public class PostsRepositoryTest {
 
     @Autowired
     PostsRepository postsRepository;
 
-    @After
+    @AfterEach
     public void cleanup(){
         postsRepository.deleteAll();
     }
